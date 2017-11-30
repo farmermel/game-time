@@ -62,6 +62,14 @@ describe.only('Ufo', function() {
 
   });
 
+  it('should be able to move right', function() {
+    const ufo = new Ufo();
+
+    assert.equal(ufo.x, 250);
+    ufo.moveRight;
+    assert.equal(ufo.x, 252);
+  })
+
 
 
 
