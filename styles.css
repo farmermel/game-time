@@ -5,9 +5,9 @@ body {
 canvas {
   border: 1px solid;
   display: block;
-  background-image: url('/images/space1.jpg');
+  background-image: url('/images/start-space.jpeg');
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -15,8 +15,7 @@ h4, p {
   margin: 8px;
 }
 
-canvas,
-.score-wrap {
+.game-wrap {
   display: none;
 }
 
@@ -41,6 +40,7 @@ button {
   height: 40px;
   width: 160px;
   background-color: #eff1f3;
+  color: #2e2e3e;
   font-size: 1.1em;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
@@ -52,7 +52,7 @@ button:focus {
 
 .start {
   box-sizing: border-box;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
@@ -64,7 +64,6 @@ button:focus {
   background-image: url("images/start-space.jpeg");
   background-size: cover;
   color: #eff1f3;
-  display: none;
 }
 
 .jump-up {
@@ -95,7 +94,7 @@ button:focus {
 /*Lose page*/
 .lose {
   box-sizing: border-box;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;

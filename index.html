@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
@@ -29,22 +30,21 @@
           <button>Click to Start</button>
         </div>
       </section>
-      <section class="score-wrap">
-        <h4>Player Score</h4>
-        <p id="score-num"></p>
+      <section class="game-wrap">
+        <article class="score-wrap">
+          <h4>Player Score</h4>
+          <p id="score-num"></p>
+        </article>
+        <canvas id="game" width=500 height=500></canvas>
       </section>
-      <canvas id="game" width=500 height=500></canvas>
-
-
       <section class="lose">
-        <div class="lose-wrap">
-          <p id="crashed">You Crashed!</p>
-          <p id="final-score">score:<span>0</span></p>
-          <button>Play Again!</button>
-          <img src="images/rabbits.png" class="bunny-image" />
-        </div>
+        <p id="crashed">You Crashed!</p>
+        <p id="final-score">score:<span>0</span></p>
+        <button>Play Again!</button>
+        <img src="images/rabbit1.png" class="bunny-image" />
       </section>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.bundle.js"></script>
   </body>
 </html>
