@@ -33,13 +33,13 @@ describe('Planet', function() {
 
     assert.equal(planet.x, 5);
     assert.equal(planet.y, 10);
-    planet.move();
+    planet.movePlanets();
     assert.equal(planet.x, 5);
     assert.equal(planet.y, 11);
   });
 });
 
-describe.only('Ufo', function() {
+describe('Ufo', function() {
   let ufo;
 
   beforeEach(function() {
