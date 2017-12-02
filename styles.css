@@ -41,6 +41,9 @@ button {
   height: 40px;
   width: 160px;
   background-color: #eff1f3;
+  font-size: 1.1em;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
 }
 
 button:focus {
@@ -61,6 +64,7 @@ button:focus {
   background-image: url("images/start-space.jpeg");
   background-size: cover;
   color: #eff1f3;
+  display: none;
 }
 
 .jump-up {
@@ -87,4 +91,38 @@ button:focus {
   width: 40px;
 }
 
+
+/*Lose page*/
+.lose {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid;
+  padding: 60px;
+  height: 500px;
+  width: 500px;
+  font-family: "Contrail One", cursive;
+  background-image: url("images/start-space.jpeg");
+  background-size: cover;
+  color: #eff1f3;
+}
+
+.bunny-image {
+  width: 71px;
+  position: absolute;
+  bottom: 171px;
+  right: 50px;
+}
+
+#crashed {
+  font-size: 3em;
+}
+
+#final-score {
+  font-size: 2em;
+  margin-bottom: 0.6em;
+}
 
