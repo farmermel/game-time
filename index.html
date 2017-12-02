@@ -8,11 +8,31 @@
   </head>
   <body>
     <div class="canvas-wrap">
+      <section class="start">
+        <div class="jump-up">
+          <img src="images/up-arrow.svg" class="expl-image" />
+          <p>To Make First Jump</p>
+        </div>
+        <div class="move-wrap">
+          <img src="images/left-arrow.svg" alt="left arrow" class="expl-image" />
+          <img src="images/right-arrow.svg" alt="right arrow" class="expl-image" />
+          <p>To Move</p>
+        </div>
+        <div class="jump-wrap">
+          <img src="images/jupiter.svg" class="expl-image" />
+          <p>Jump on Planets!</p>
+        </div>
+        <div class="start-button">
+          <p>Don't Fall!</p>
+          <button>Click to Start</button>
+        </div>
+      </section>
       <section class="score-wrap">
         <h4>Player Score</h4>
         <p id="score-num"></p>
       </section>
       <canvas id="game" width=500 height=500></canvas>
+      <section></section>
     </div>
     <script src="main.bundle.js"></script>
   </body>
