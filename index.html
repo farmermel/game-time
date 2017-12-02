@@ -3,10 +3,17 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
     <title>Game Time</title>
   </head>
   <body>
-    <canvas id="game" width=500 height=500></canvas>
+    <div class="canvas-wrap">
+      <section class="score-wrap">
+        <h4>Player Score</h4>
+        <p id="score-num"></p>
+      </section>
+      <canvas id="game" width=500 height=500></canvas>
+    </div>
     <script src="main.bundle.js"></script>
   </body>
 </html>
