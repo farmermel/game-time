@@ -40,37 +40,74 @@ describe('Planet', function() {
 });
 
 describe.only('Ufo', function() {
+  let ufo;
+
+  beforeEach(function() {
+    ufo = new Ufo();
+  })
 
   it('should be a function', function() {
-    const ufo = new Ufo();
+
     assert.equal(true, true);
   });
 
   it('should default to center bottom of canvas', function() {
-    const ufo = new Ufo();
 
     assert.equal(ufo.x, 250);
     assert.equal(ufo.y, 460);
   })
 
   it('should be able to move left', function() {
-    const ufo = new Ufo();
 
     assert.equal(ufo.x, 250);
     ufo.moveLeft;
-    assert.equal(ufo.x, 248);
+    assert.equal(ufo.x, 246);
 
   });
 
   it('should be able to move right', function() {
-    const ufo = new Ufo();
 
     assert.equal(ufo.x, 250);
     ufo.moveRight;
-    assert.equal(ufo.x, 252);
+    assert.equal(ufo.x, 254);
   })
 
+  it('should be subject to gravity', function() {
+    ufo = new Ufo(50, 50);
+    assert.equal(ufo.y, 50);
+    assert.equal(ufo.currentDY, 0);
 
+    ufo.makeGravity();
+    
+    assert.equal(ufo.y, 50.1);
+    assert.equal(ufo.currentDY, 0.1);
+  })
 
+  it.skip('should be able to bounce off of planets', function() {
+    ufo = new Ufo(50, 50);
+    planet = new Planet (55, 55);
 
+    assert.equal(ufo.currentDY, -5);
+  })
+
+  it('should not be able to go off the canvas', function() {
+    ufo = new Ufo(0, 0);
+
+    assert.equal(ufo.x, 0);
+    assert.equal(ufo.y, 0);
+    ufo.moveLeft;
+    ufo.bounceUp();
+    assert.equal(ufo.x, 0);
+    assert.equal(ufo.y, 0);
+
+    ufo = new Ufo(460, 460);
+
+    assert.equal(ufo.x, 460);
+    assert.equal(ufo.y, 460);
+    ufo.moveRight;
+    ufo.makeGravity();
+    ufo.rockBottom;
+    assert.equal(ufo.x, 460);
+    assert.equal(ufo.y, 460);
+  })
 });
