@@ -2,4 +2,8 @@ canvas {
   border: 1px solid;
   margin: auto;
   display: block;
+  background-image: url('/images/space1.jpg');
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
