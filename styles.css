@@ -1,5 +1,7 @@
+/*Game Page*/
 body {
   box-sizing: border-box;
+  font-family: "Contrail One", cursive;
 }
 
 canvas {
@@ -27,11 +29,16 @@ h4, p {
 
 .score-wrap {
   position: absolute;
-  font-family: "Contrail One", cursive;
+  /*font-family: "Contrail One", cursive;*/
   width: 100px;
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
   color: white;
+}
+
+.level-change {
+  display: none;
+  color: #eff1f3;
 }
 
 
@@ -47,7 +54,7 @@ h1 {
   width: 100%;
   height: 500px;
   border-size: border-box;
-  font-family: "Contrail One", cursive;
+  /*font-family: "Contrail One", cursive;*/
   background-color: #000;
   color: #eff1f3;
   font-size: 2em;
@@ -103,7 +110,7 @@ button:focus {
   padding: 60px;
   height: 500px;
   width: 500px;
-  font-family: "Contrail One", cursive;
+  /*font-family: "Contrail One", cursive;*/
   background-image: url("images/start-space.jpeg");
   background-size: cover;
   color: #eff1f3;
@@ -147,7 +154,7 @@ button:focus {
   padding: 60px;
   height: 500px;
   width: 500px;
-  font-family: "Contrail One", cursive;
+  /*font-family: "Contrail One", cursive;*/
   background-image: url("images/start-space.jpeg");
   background-size: cover;
   color: #eff1f3;
