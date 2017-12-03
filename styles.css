@@ -34,6 +34,40 @@ h4, p {
   color: white;
 }
 
+
+/*Title page*/
+h1 {
+  margin: 0;
+  top: 180px;
+  right: 230px;
+  position: absolute;
+}
+
+.title-wrap {
+  width: 100%;
+  height: 500px;
+  border-size: border-box;
+  font-family: "Contrail One", cursive;
+  background-color: #000;
+  color: #eff1f3;
+  font-size: 2em;
+}
+
+.title-space {
+  width: 270px;
+  padding: 141px 0px 0px 110px;
+}
+
+#start-bun1 {
+  top: 152px;
+  right: 147px;
+}
+
+#hopper {
+  position: absolute;
+  left: 40px;
+}
+
 /*Start page*/
 
 button {
@@ -127,4 +161,3 @@ button:focus {
   margin-bottom: 0.6em;
   width: 100%;
 }
-
