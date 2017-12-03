@@ -96,6 +96,7 @@ button:focus {
   box-sizing: border-box;
   display: none;
   flex-wrap: wrap;
+  align-content: center;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -118,10 +119,12 @@ button:focus {
 
 #crashed {
   font-size: 3em;
+  width: 100%;
 }
 
 #final-score {
   font-size: 2em;
   margin-bottom: 0.6em;
+  width: 100%;
 }
 
