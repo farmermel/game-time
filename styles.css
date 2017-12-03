@@ -68,6 +68,15 @@ h1 {
   left: 40px;
 }
 
+#production {
+  position: absolute;
+  bottom: 2px;
+  right: 11px;
+  font-family: 'Oswald', sans-serif;
+  font-size: .5em;
+  font-style: italic;
+}
+
 /*Start page*/
 
 button {
