@@ -1,6 +1,7 @@
 const { assert } = require('chai');
 const Planet = require('../lib/Planet');
 const Ufo = require('../lib/Ufo');
+const Game = require('../lib/Game.js');
 
 
 describe('Planet', function() {
