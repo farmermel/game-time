@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,700" rel="stylesheet">
 
     <title>Game Time</title>
   </head>
   <body>
     <div class="canvas-wrap">
+      <section class="title-wrap">
+          <h1>Space <span id="hopper">Hopper</span></h1>
+          <!-- <img src="images/title-space.jpeg" class="title-space"> -->
+          <img src="images/rabbit2.png" class="bunny-image" id="start-bun1" />
+          <p id="production">A SuliValley production</p>
+          <!-- <img src="images/rabbit3.png" class="bunny-image" id="start-bun2" /> -->
+      </section>
       <section class="start">
         <div class="jump-up">
           <img src="images/up-arrow.svg" class="expl-image" />
@@ -39,7 +46,7 @@
       </section>
       <section class="lose">
         <p id="crashed">You Crashed!</p>
-        <p id="final-score">score: <span>0</span></p>
+        <p id="final-score">score: <span id="score">0</span></p>
         <button class="restart-button">Play Again!</button>
         <img src="images/rabbit1.png" class="bunny-image" />
       </section>
