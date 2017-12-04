@@ -29,7 +29,6 @@ h4, p {
 
 .score-wrap {
   position: absolute;
-  /*font-family: "Contrail One", cursive;*/
   width: 100px;
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
@@ -54,8 +53,7 @@ h1 {
   width: 100%;
   height: 500px;
   border-size: border-box;
-  /*font-family: "Contrail One", cursive;*/
-  background-color: #000;
+  background-color: #2e2e3e;
   color: #eff1f3;
   font-size: 2em;
 }
@@ -107,13 +105,19 @@ button:focus {
   justify-content: center;
   text-align: center;
   border: 1px solid;
-  padding: 60px;
+  padding: 115px 60px 60px;
   height: 500px;
   width: 500px;
-  /*font-family: "Contrail One", cursive;*/
   background-image: url("images/start-space.jpeg");
   background-size: cover;
   color: #eff1f3;
+}
+
+#how-to {
+  position: absolute;
+  top: 36px;
+  right: 134px;
+  font-size: 2.8em;
 }
 
 .jump-up {
@@ -136,6 +140,13 @@ button:focus {
   height: 40px;
 }
 
+#start-bun2 {
+  position: absolute;
+  left: 103px;
+  bottom: 70px;
+  transform: rotate(-35deg);
+}
+
 .expl-image {
   width: 40px;
 }
@@ -154,7 +165,6 @@ button:focus {
   padding: 60px;
   height: 500px;
   width: 500px;
-  /*font-family: "Contrail One", cursive;*/
   background-image: url("images/start-space.jpeg");
   background-size: cover;
   color: #eff1f3;
