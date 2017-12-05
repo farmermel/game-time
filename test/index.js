@@ -10,37 +10,49 @@ describe('Planet', function() {
     assert.equal(true, true);
   });
 
-  it('should accept an x and y coordinate', function() {
-    const planet = new Planet(5, 10);
+  it('should generate a unique x coordinate and the same y coordinate', function() {
+    let planet = new Planet();
+    let planet1 = new Planet();
 
-    assert.equal(planet.x, 5);
-    assert.equal(planet.y, 10);
+    assert.notEqual(planet.x, planet1.x);
+    assert.equal(planet.y, planet1.y);
   });
 
-  it.skip('should have a horizontal and vertical velocity', function() {
+  it('should have a velocity on y', function() {
     const planet = new Planet();
 
-    assert.exists(planet.dx, 'x velocity is neither null or undefined');
-  });
-
-  it('should accept an image source', function() {
-    const planet = new Planet(5, 10, '../images/mars.svg');
-
-    assert.equal(planet.imgsrc, '../images/mars.svg');
+    assert.equal(planet.dy, 1);
   });
 
   it('should move only vertically', function() {
-    const planet = new Planet(5, 10);
+    const planet = new Planet();
+    let initialPlanetX = planet.x;
 
-    assert.equal(planet.x, 5);
-    assert.equal(planet.y, 10);
+    assert.equal(planet.x, initialPlanetX);
+    assert.equal(planet.y, -50);
     planet.movePlanets();
-    assert.equal(planet.x, 5);
-    assert.equal(planet.y, 11);
+    assert.equal(planet.x, initialPlanetX);
+    assert.equal(planet.y, -49);
   });
+
+  // put on game?
+  // it('should decrease in size when user levels up', function() {
+  //   const planet = new Planet();
+
+  //   assert.equal(planet.width, 40);
+  //   assert.equal(planet.height, 40);
+
+  //   planet.checkPlanetSize(1);
+
+  //   const planet1 = new Planet();
+  //   assert.equal(planet1.width, 30);
+  //   assert.equal(planet1.height, 30);
+
+  // })
+
 });
 
-describe('Ufo', function() {
+describe.only('Ufo', function() {
   let ufo;
 
   beforeEach(function() {
