@@ -1,15 +1,14 @@
-const { assert } = require('chai');
-const Game = require('../lib/Game.js');
-const startScreen = require('../lib/index.js');
+// const { assert } = require('chai');
+// const Game = require('../lib/Game.js');
 
-describe('Game', function() {
-  let game;
+// describe('Game', function() {
+//   let game;
 
-  beforeEach(function(){
-    game = new Game();
-  });
+//   beforeEach(function(){
+//     game = new Game();
+//   });
 
-  it('should load start screen first', function() {
-    console.log(startScreen);
-  })
-})
+//   it('should load start screen first', function() {
+//    
+//   })
+// })
