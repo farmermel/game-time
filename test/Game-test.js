@@ -8,6 +8,12 @@ describe('Game', function() {
     game = new Game();
   });
 
+  it('should change level on Play', function() {
+    // let planetsArray = [];
+
+  });
+
+
   //movePlanets
   //testCollision
   //changelevelstate
@@ -15,8 +21,7 @@ describe('Game', function() {
 
   //on loss:
   //reset states
-  //reset score
-  //reset level
+  //reset score  //reset level
 
   //on levelup
   //change level
@@ -30,11 +35,11 @@ describe('Game', function() {
   //check that planets are being removed
 
 
-  it('should ')
+  it.skip('should ')
 
-  it('should remove a planet from planet array on collision', function() {
+  it.skip('should remove a planet from planet array on collision', function() {
 
   })
 
 
-})
+});
