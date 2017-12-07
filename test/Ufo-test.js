@@ -26,7 +26,7 @@ describe('Ufo', function() {
 
     assert.equal(ufo.x, 250);
     ufo.moveLeft();
-    assert.equal(ufo.x, 249);
+    assert.equal(ufo.x, 248.5);
 
   });
 
@@ -34,7 +34,7 @@ describe('Ufo', function() {
 
     assert.equal(ufo.x, 250);
     ufo.moveRight();
-    assert.equal(ufo.x, 251);
+    assert.equal(ufo.x, 251.5);
   })
 
   it('should be subject to gravity', function() {
@@ -44,8 +44,8 @@ describe('Ufo', function() {
 
     ufo.makeGravity();
     
-    assert.equal(ufo.y, 50.1);
-    assert.equal(ufo.velocityY, 0.1);
+    assert.equal(ufo.y, 50.095);
+    assert.equal(ufo.velocityY, 0.095);
   })
 
   it('should be able to bounce off of planets', function() {
@@ -63,13 +63,13 @@ describe('Ufo', function() {
     assert.equal(ufo.x, 250);
     ufo.moveRight();
     ufo.makeFriction();
-    assert.equal(ufo.x, 251.98);
+    assert.equal(ufo.x, 252.97);
 
     ufo.x = 250;
     ufo.velocityX = 0;
     ufo.moveLeft();
     ufo.makeFriction();
-    assert.equal(ufo.x, 248.02);
+    assert.equal(ufo.x, 247.03);
   })
 
   it('should not be able to go off the canvas', function() {

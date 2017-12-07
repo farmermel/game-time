@@ -7,6 +7,13 @@ describe('Planet', function() {
     assert.equal(true, true);
   });
 
+  it('should have default states', function() {
+    assert.equal(game.y, -50);
+    assert.equal(game.dx, 0);
+    assert.equal(game.dy, 0.8);
+
+  })
+
   it('should generate a unique x coordinate and the same y coordinate', function() {
     let planet = new Planet();
     let planet1 = new Planet();
