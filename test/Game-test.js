@@ -8,38 +8,86 @@ describe('Game', function() {
     game = new Game();
   });
 
-  it('should change level on Play', function() {
-    // let planetsArray = [];
+  it('should change level on levelup', function() {
+    assert.equal(game.level, 0);
+    game.changeLevelState();
+    assert.equal(game.level, 0);
 
+    game.score = 1100;
+    game.changeLevelState();
+
+    assert.equal(game.level, 1);
   });
 
+  it('should generate refueling station every 10 planets', function() {
+    game.planetsGenerated = 9;
+    game.checkForRefuel();
+    assert.equal(game.refuel.refuelExists, false);
 
-  //movePlanets
-  //testCollision
-  //changelevelstate
-  //generate refuel
+    game.planetsGenerated = 10;
+    game.checkForRefuel();
+    assert.equal(game.refuel.refuelExists, true);
+  });
 
-  //on loss:
-  //reset states
-  //reset score  //reset level
+  it('should change level after 1000 points', function() {
+    game.score = 900;
+    game.changeLevelState();
+    assert.equal(game.level, 0);
 
-  //on levelup
-  //change level
-  //put back bottom
-  //reset planet array
-  //reset states in general
+    game.score = 1000;
+    game.changeLevelState();
+    assert.equal(game.level, 1);
+  });
 
-  //test calculate score
+  it('should replace bottom on level change', function() {
+    game.ufo.removeBottom = true;
+    game.level = 0;
+    game.score = 1100;
+    game.changeLevelState();
 
-  //check that refuel exists
-  //check that planets are being removed
+    assert.equal(game.ufo.removeBottom, false);
+  });
 
+  it('should calculate the score on planet collision', function() {
+    game.ufo.planetCollision = false;
+    game.calculateScore();
+    assert.equal(game.score, 0);
 
-  it.skip('should ')
+    game.ufo.planetCollision = true;
+    game.calculateScore();
+    assert.equal(game.score, 10);
+  });
 
-  it.skip('should remove a planet from planet array on collision', function() {
+  it('should double the score on refueling station collision', function() {
+    game.score = 10;
+    game.ufo.refuelCollision = false;
+    game.calculateScore();
+    assert.equal(game.score, 10);
 
-  })
+    game.ufo.refuelCollision = true;
+    game.calculateScore();
+    assert.equal(game.score, 20);
+  });
 
+  it('should decrease the score on sun collision', function() {
+    game.score = 10;
+    game.ufo.sunCollision = false;
+    game.calculateScore();
+    assert.equal(game.score, 10);
+
+    game.ufo.sunCollision = true;
+    game.calculateScore();
+    assert.equal(game.score, 0);
+  });
+
+  it('should initiate a loss when ufo goes off canvas', function() {
+    game.ufo.y = 500;
+    game.checkLoss();
+    assert.equal(game.loss, false);
+
+    game.ufo.y = 550;
+    game.checkLoss();
+    assert.equal(game.loss, true);
+  });
 
 });
