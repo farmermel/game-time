@@ -23,7 +23,7 @@ h4, p {
 
 .canvas-wrap {
   position: relative;
-  width: 500px;
+  width: 750px;
   margin: auto;
 }
 
@@ -102,12 +102,12 @@ button:focus {
   box-sizing: border-box;
   display: none;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   border: 1px solid;
-  padding: 115px 60px 60px;
+  padding-top: 115px;
   height: 500px;
-  width: 500px;
+  width: 750px;
   background-image: url("images/start-space.jpeg");
   background-size: cover;
   color: #eff1f3;
@@ -116,12 +116,14 @@ button:focus {
 #how-to {
   position: absolute;
   top: 36px;
-  right: 134px;
+  right: 274px;
   font-size: 2.8em;
 }
 
 .jump-up {
-  width: 100%;
+  box-sizing: border-box;
+  padding-left: 100px;
+  width: 50%;
   height: 40px;
 }
 
@@ -134,16 +136,26 @@ button:focus {
   font-size: 2em;
 }
 
-.jump-wrap,
+.planet-wrap {
+  position: absolute;
+  top: 47%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .move-wrap {
+  box-sizing: border-box;
+  padding-right: 100px;
   width: 50%;
   height: 40px;
 }
 
 #start-bun2 {
   position: absolute;
-  left: 103px;
-  bottom: 70px;
+  bottom: 101px;
+  left: 223px;
   transform: rotate(-35deg);
 }
 
@@ -164,7 +176,7 @@ button:focus {
   border: 1px solid;
   padding: 60px;
   height: 500px;
-  width: 500px;
+  width: 750px;
   background-image: url("images/start-space.jpeg");
   background-size: cover;
   color: #eff1f3;
@@ -174,7 +186,7 @@ button:focus {
   width: 71px;
   position: absolute;
   bottom: 171px;
-  right: 50px;
+  right: 220px;
 }
 
 #crashed {
