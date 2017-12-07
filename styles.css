@@ -38,6 +38,12 @@ h4, p {
 .level-change {
   display: none;
   color: #eff1f3;
+  margin: 0;
+  top: -13px;
+  left: 197px;
+  position: absolute;
+  font-size: 3em;
+  width: 78%;
 }
 
 
