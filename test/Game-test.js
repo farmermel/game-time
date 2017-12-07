@@ -8,6 +8,17 @@ describe('Game', function() {
     game = new Game();
   });
 
+  it('should have default states', function() {
+    assert.deepEqual(game.planetsArray, []);
+    assert.equal(game.scoreIncrement, 10);
+    assert.equal(game.score, 0);
+    assert.equal(game.level, 0);
+    assert.equal(game.planetsGenerated, 0);
+    assert.equal(game.upArrowPressed, false);
+    assert.equal(game.levelChange, false);
+    assert.equal(game.loss, false);
+  })
+
   it('should change level on levelup', function() {
     assert.equal(game.level, 0);
     game.changeLevelState();
