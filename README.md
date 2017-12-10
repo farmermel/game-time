@@ -16,7 +16,17 @@ SpaceHopper is drawn on an HTML5 canvas element with div elements laid over it f
 
 ## Credits
 Winterbells is an [Orisinal](http://www.ferryhalim.com/orisinal/) original game.
-We take our planet images from [flaticon](https://www.flaticon.com/) and alter some of their colors.
+We take our planet images from [flaticon](https://www.flaticon.com/) and alter some of their colors:
+
+[UFO Artist](https://www.flaticon.com/authors/nikita-golubev)
+
+[Sun Artist](https://www.flaticon.com/authors/vectors-market)
+
+[Saturn, Earth, Mars, and Jupiter Artist](https://www.flaticon.com/authors/freepik)
+
+[Blue Ringed Planet Artist](https://www.flaticon.com/authors/smashicons)
+
+[Space Bunnies Artist](MaikeVierkant.tumblr.com)
 
 ## SpaceHopper Screenshots
 
