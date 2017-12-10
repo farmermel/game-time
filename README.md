@@ -13,6 +13,20 @@ The bunny and bells from Winterbells become a ufo and planets. Birds that double
 
 ## Implementation
 SpaceHopper is drawn on an HTML5 canvas element with div elements laid over it for start, instruction, and loss screens.
+The project is done using jQuery. Each game component has its own class that inherits from a block class. The block class contains methods for movement and drawing as well as base properties such as original x and y generation and velocity. Suns further inherit from the planet class. Each game component also has an associated test file.
+The game is coordinated almost entirely from a game class with methods and properties for tracking and changing state. The animation loop and DOM manipulation are contained in an index file that interacts minimally with game to update changes.
+
+### Challenges
+Initial organization of inheritance and file structure was a challenge given that we had never tackled a project of this scope before. We refactored multiple times throughout the project to structure the code logically.
+
+This was also the first project where we implemented test driven development. Our biggest challenge with testing was related to structural issues that had DOM manipulation present in our game file. Once we refactored for seperation between game and DOM manipulation testing went much more smoothly.
+
+### Successes
+We are very proud of the presentation of the game.
+
+The vertical and horizontal movement of the ufo are very smooth. This took a lot of tinkering and we like where it ended up. Especially how the planet vertical movement mirrors the ufo jump to keep the player roughly in the middle of the screen.
+
+Our semi-random pathway for planet generation went through a lot of iterations to get the desired result. Initially we generated planets in the game loop with random x and y above the canvas: this was a good minimum viable product but left gaps and/or overlap between planets and made the game somewhat difficult to play. We transitioned to a static y generation with semi-random x that was based on the planet generated before to create more of a pathway. The game became playable when we took planet generation out of the game loop entirely and instead put it on a timer. The final iteration generates planets with the semi-random x and static y based on the last planet generated falling past a certain point. 
 
 ## Credits
 Winterbells is an [Orisinal](http://www.ferryhalim.com/orisinal/) original game.
