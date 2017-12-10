@@ -1,174 +1,36 @@
-# Game Time Starter Kit (FE - Module 2)
+# Game Time - Casey Dallavalle and Melena Suliteanu (FE - Module 2)
 
-Basic Game Time starter kit.
+Game Time is the first project in Module 2 for Frontend Development at Turing School of Software and Design. 
+[Project Specification](http://frontend.turing.io/projects/game-time.html)
+[Starter Kit Repository](https://github.com/turingschool-examples/game-time-starter-kit-FEm1) which contains webkit and instructions for setting up testing in mocha.
 
-## Initial Setup
+## Game Inspiration: Winterbells
+The game we replicate is [Winterbells](http://www.ferryhalim.com/orisinal/g3/bells.htm). 
 
-One person from your project will sets up the repository. That one person should follow these steps:
+## Our Game: SpaceHopper
+In SpaceHopper we iterate on Winterbells with the original functionality as well as some added features. 
+The bunny and bells from Winterbells become a ufo and planets. Birds that double points become a refueling station. We also add suns that decrement points but don't trigger a loss when the ufo jumps on them. The original game does not have levels, instead bells slowly get smaller as user progresses through the game. In SpaceHopper we add levels, which make the planets generated smaller based on a score threshold. Bunnies in spacesuits appear on all description screens to tie together the themes of Winterbells and SpaceHopper (and because astronaut bunnies are adorable). 
 
-1. Clone this starter kit repository and rename the repository to `game-time` in one command
+## Implementation
+SpaceHopper is drawn on an HTML5 canvas element with div elements laid over it for start, instruction, and loss screens.
 
-  ```shell
-  git clone git@github.com:turingschool-examples/game-time-starter-kit-FEm1.git game-time
-  ```
+## Credits
+Winterbells is an [Orisinal](http://www.ferryhalim.com/orisinal/) original game.
+We take our planet images from [flaticon](https://www.flaticon.com/) and alter some of their colors.
 
-2. Change into the `game-time` directory
+## SpaceHopper Screenshots
 
-3. Remove the default remote (origin)
+#### Start Screen (fades out to instruction screen after 1.5 seconds)
+![Instruction Screen](https://i.imgur.com/ZfQySAA.png)
 
-  ```shell
-  git remote rm origin
-  ```
+#### Instruction Screen
+![Instruction Screen](https://i.imgur.com/K7zly4z.png)
 
-4. Create a new repository on GitHub named `game-time`
+#### Level One Action
+![Level One](https://i.imgur.com/Cb19SPk.png)
 
-5. Add your new repository remote to the game time starter kit - **your remote URL and user name will be different in the command below**
+#### Level Two
+![Level Two](https://i.imgur.com/zwY3MMM.png)
 
-  ```shell
-  git remote add origin git@github.com:robbiejaeger/game-time.git
-  ```
-
-6. Install the dependencies of the starter kit
-
-  ```shell
-  npm install
-  ```
-
-7. Add, commit, and push up to your repository
-
-  ```shell
-  git add .
-  git commit -m "Initial commit using starter kit"
-  git push origin master
-  ```
-
-8. Now add your team member(s) as collaborators to the repository. They can now clone down your `game-time` repository as normal.
-
-9. Once each partner clones down the repo, they need to run `npm install` to install the dependencies on their machine.
-
-## Run the Server
-
-To see your code in action, you need to fire up a development server. Use the command:
-
-```shell
-npm start
-```
-
-Once the server is running, visit in your browser:
-
-* `http://localhost:8080/webpack-dev-server/` to run your application.
-* `http://localhost:8080/webpack-dev-server/test.html` to run your test suite in the browser.
-
-To build the static files:
-
-```js
-npm run build
-```
-
-## Run Tests in the Terminal
-
-To run all of your tests:
-
-```js
-npm test
-```
-
-## File Organization
-
-Webpack is a little opinionated about how files are organized. Here is a brief guide on how to organize development and test files.
-
-### Development Files
-
-Node and webpack work together to help us organize our files and keep responsibilities separated.
-
-For example, if we have the `lib/index.js` file and a `lib/Block.js` file:
-
-**lib/index.js**
-
-```javascript
-var Block = require('./Block');
-
-var canvas = document.getElementById('game');
-var context = canvas.getContext('2d');
-
-var blocks = [];
-
-blocks.push(new Block(50, 50, 10, 10, context));
-blocks.push(new Block(100, 50, 10, 10, context));
-
-requestAnimationFrame(function gameLoop() {
-  context.clearRect(0, 0, canvas.width, canvas.height);
-
-  this.blocks.forEach(function(block){
-    block.draw()
-    block.move()
-  })
-
-  requestAnimationFrame(gameLoop);
-});
-```
-
-**lib/Block.js**
-
-```javascript
-function Block(x, y, width, height, context) {
-  this.x = x;
-  this.y = y;
-  this.width = width;
-  this.height = height;
-  this.context = context;
-}
-
-Block.prototype.draw = function () {
-  this.context.fillRect(this.x, this.y, this.width, this.height);
-};
-
-Block.prototype.move = function () {
-  this.y++;
-};
-
-module.exports = Block;
-```
-
-All of the `Block.js` code could live in the `index.js` file, but that would go against our philosophy of separating responsibility between files.
-
-There are two main things to pay attention to here:
-
-1. At the top of the `index.js` file, we require the `Block.js` file using the line of code `var Block = require('./Block');` (we leave out the `.js`). This brings in the code from the `Block.js` file so we can use that file's code in the `index.js` file.
-
-2. In the `Block.js` file, the bottom line says `module.exports = Block;` which says what we want this file to export when we say `require` in other files, like in `index.js`.
-
-So now we have two files that can share code between each other, but we have to pay attention to what we export and what we require. If we didn't do this, then when we try to make a new Block in the `index.js` file, it won't know what Block we're talking about!
-
-### Test Files
-
-Near the end of game time, you will have multiple objects for your game that are tested separately with individual test files. The `test/index.js` file serves as an "entry point" for mocha to load all of the tests you write.
-
-Test file organization is a bit different from development files. If we want to test the `Block.js` file from above, then this is how we would do it. For each object file (in this case `block.js`), we want to have a corresponding test file. So in the `test` directory, we would create a new file called `test/Block-test.js`. Here is what that file would look like:
-
-**test/Block-test.js**
-
-```javascript
-var chai = require('chai');
-var assert = chai.assert;
-
-var Block = require('../lib/Block');
-
-describe('Block', function() {
-  context('with default attributes', function() {
-    // Your tests here...  
-  });  
-});
-```
-
-**test/index.js**
-
-```javascript
-require('./Block-test')
-```
-
-Two main points to pay attention to:
-
-1. In the `Block-test.js` file, we require the `Block.js` file so that we can construct blocks in our tests.
-
-2. In the `test/index.js` file, we require the `Block-test.js` file so that we can view the test results in the browser (at `http://localhost:8080/webpack-dev-server/test.html`).
+#### Crash Screen:
+![Crash Screen](https://i.imgur.com/9rKwTFi.png)
